@@ -9,4 +9,12 @@ export class ProductsController {
       message: 'Products found!',
     };
   }
+
+  @Get('profile')
+  getProfile() {
+    return {
+      succeess: true,
+      message: 'User profile fetched!',
+    };
+  }
 }
