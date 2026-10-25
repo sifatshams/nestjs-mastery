@@ -4,6 +4,9 @@ import { Controller, Get } from '@nestjs/common';
 export class ProductsController {
   @Get()
   findAll() {
-    return 'All products.';
+    return {
+      success: true,
+      message: 'Products found!',
+    };
   }
 }
