@@ -1,20 +1,19 @@
 import { Controller, Get } from '@nestjs/common';
+import { ProductsService } from './products.service.js';
 
 @Controller('products')
 export class ProductsController {
+  constructor(private productsService: ProductsService) {}
+
   @Get()
   findAll() {
-    return {
-      success: true,
-      message: 'Products found!',
-    };
+    return this.productsService.getProducts();
   }
 
-  @Get('profile')
-  getProfile() {
+  @Get('count')
+  totalCount() {
     return {
-      succeess: true,
-      message: 'User profile fetched!',
+      totalProducts: this.productsService.totalProducts(),
     };
   }
 }
