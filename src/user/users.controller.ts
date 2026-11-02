@@ -5,7 +5,7 @@ import { UsersService } from './users.service.js';
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
-  @Get()
+  @Get('test')
   getUsers() {
     return this.usersService.getUsers();
   }
