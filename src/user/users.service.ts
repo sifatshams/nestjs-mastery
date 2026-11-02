@@ -1,8 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Param } from '@nestjs/common';
 
 @Injectable()
 export class UsersService {
-  getUsers() {
-    return ['Sifat', 'Mukit', 'Asif'];
+  getUsers(@Param('id') id: string) {
+    return `Users id: ${id}`;
   }
 }
